@@ -1,199 +1,157 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>عبد | بوتي</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
 body {
 background: #0a0a15;
 color: #fff;
-font-family: 'Segoe UI', Tahoma, Arial;
+font-family: Arial;
+padding: 40px 20px;
+text-align: center;
 line-height: 1.8;
-overflow-x: hidden;
 }
-
-/* ====== شريط التنقل ====== */
-.navbar {
-position: fixed;
-top: 0; left: 0; right: 0;
-background: rgba(10,10,21,0.95);
-backdrop-filter: blur(10px);
-padding: 20px 40px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-border-bottom: 1px solid #ffd70033;
-z-index: 1000;
-}
-.navbar .logo {
-color: #ffd700;
-font-size: 24px;
-font-weight: bold;
-display: flex;
-align-items: center;
-gap: 10px;
-}
-.navbar ul {
-list-style: none;
-display: flex;
-gap: 30px;
-}
-.navbar ul a {
-color: #ccc;
-text-decoration: none;
-font-size: 16px;
-transition: 0.3s;
-position: relative;
-}
-.navbar ul a:hover { color: #ffd700; }
-.navbar ul a::after {
-content: '';
-position: absolute;
-bottom: -5px; right: 0;
-width: 0; height: 2px;
-background: #ffd700;
-transition: 0.3s;
-}
-.navbar ul a:hover::after { width: 100%; }
-
-/* ====== الهيرو ====== */
-.hero {
-min-height: 100vh;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-text-align: center;
-padding: 120px 20px 60px;
-position: relative;
-background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0a0a15 70%);
-}
-.hero::before {
-content: '';
-position: absolute;
-top: 0; left: 0; right: 0; bottom: 0;
-background-image:
-radial-gradient(circle at 20% 30%, #ffd70011 0%, transparent 50%),
-radial-gradient(circle at 80% 70%, #ffd70011 0%, transparent 50%);
-animation: pulse 5s ease-in-out infinite;
-}
-@keyframes pulse {
-0%, 100% { opacity: 0.5; }
-50% { opacity: 1; }
-}
-.hero h1 {
-font-size: 80px;
-color: #ffd700;
-margin-bottom: 20px;
-position: relative;
-animation: fadeInDown 1s ease;
-text-shadow: 0 0 30px #ffd70055;
-}
-.hero p {
-font-size: 24px;
-color: #ccc;
-margin-bottom: 40px;
-position: relative;
-animation: fadeInUp 1s ease 0.2s both;
-}
-.hero .buttons {
-display: flex;
-gap: 20px;
-flex-wrap: wrap;
-justify-content: center;
-position: relative;
-animation: fadeInUp 1s ease 0.4s both;
-}
-
-/* ====== الأزرار ====== */
+h1 { color: #ffd700; font-size: 60px; margin-bottom: 20px; }
+h2 { color: #ffd700; font-size: 32px; margin: 50px 0 25px; }
+p { color: #ccc; font-size: 18px; }
 .btn {
-background: #ffd700;
-color: #000;
-padding: 15px 40px;
-border-radius: 12px;
-text-decoration: none;
-font-size: 18px;
-font-weight: bold;
-display: inline-flex;
-align-items: center;
-gap: 10px;
-transition: 0.3s;
-border: 2px solid #ffd700;
-box-shadow: 0 0 20px #ffd70044;
+background: #ffd700; color: #000;
+padding: 15px 40px; border-radius: 10px;
+text-decoration: none; font-size: 18px;
+font-weight: bold; display: inline-block;
+margin: 10px; transition: 0.3s;
 }
-.btn:hover {
-background: #fff;
-transform: translateY(-5px);
-box-shadow: 0 10px 40px #ffd70088;
-}
-.btn-outline {
-background: transparent;
-color: #ffd700;
-}
-.btn-outline:hover { background: #ffd700; color: #000; }
-
-/* ====== الأقسام ====== */
-.section {
-padding: 80px 40px;
-max-width: 1200px;
-margin: 0 auto;
-}
-.section h2 {
-font-size: 40px;
-color: #ffd700;
-margin-bottom: 40px;
-text-align: center;
-position: relative;
-padding-bottom: 20px;
-}
-.section h2::after {
-content: '';
-position: absolute;
-bottom: 0; left: 50%;
-transform: translateX(-50%);
-width: 80px; height: 4px;
-background: #ffd700;
-border-radius: 2px;
-}
-
-/* ====== الإحصائيات ====== */
+.btn:hover { background: #fff; transform: scale(1.05); }
 .stats {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-gap: 25px;
+display: flex; justify-content: center;
+gap: 25px; margin-top: 30px; flex-wrap: wrap;
 }
 .stat {
-background: linear-gradient(135deg, #1a1a2e, #252540);
-padding: 40px 20px;
-border-radius: 20px;
-text-align: center;
-border: 1px solid #ffd70033;
-transition: 0.3s;
-position: relative;
-overflow: hidden;
+background: #1a1a2e; padding: 25px 45px;
+border-radius: 15px; border: 1px solid #ffd70033;
 }
-.stat:hover {
-transform: translateY(-10px);
-border-color: #ffd700;
-box-shadow: 0 20px 40px #ffd70022;
+.stat .num { display: block; font-size: 40px; color: #ffd700; font-weight: bold; }
+.stat .lbl { font-size: 16px; color: #aaa; }
+table {
+width: 100%; max-width: 700px; margin: 0 auto;
+border-collapse: collapse; background: #1a1a2e;
+border-radius: 15px; overflow: hidden;
 }
-.stat i {
-font-size: 40px;
-color: #ffd700;
-margin-bottom: 15px;
-display: block;
+th, td { padding: 18px; border-bottom: 1px solid #333; text-align: right; }
+th { background: #252540; color: #ffd700; }
+td { color: #ccc; }
+.grid {
+display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px; max-width: 900px; margin: 0 auto;
 }
-.stat .number {
-font-size: 45px;
-color: #ffd700;
-font-weight: bold;
-display: block;
+.card {
+background: #1a1a2e; padding: 25px;
+border-radius: 15px; border: 1px solid #333;
 }
-.stat .label {
-font-size: 16px;
-color: #aaa;
+.card h3 { color: #ffd700; margin-bottom: 10px; }
+.badge {
+display: inline-block; background: #ffd70022; color: #ffd700;
+padding: 8px 18px; border-radius: 20px; margin: 5px;
+border: 1px solid #ffd70055; font-size: 15px;
 }
+.footer {
+margin-top: 60px; padding: 30px;
+border-top: 1px solid #333; color: #666;
+}
+</style>
+</head>
+<body>
+
+<h1>🤖 عبد</h1>
+<p>بوتك الشخصي — نوفا ✨ رتب 🏆 بريميوم 💎</p>
+
+<div>
+<a href="#" class="btn">➕ أضف البوت</a>
+<a href="#" class="btn">💬 الدعم</a>
+</div>
+
+<h2>📊 الإحصائيات</h2>
+<div class="stats">
+<div class="stat">
+<span class="num">0</span>
+<span class="lbl">عضو</span>
+</div>
+<div class="stat">
+<span class="num">0</span>
+<span class="lbl">سيرفر</span>
+</div>
+<div class="stat">
+<span class="num">0</span>
+<span class="lbl">بريميوم</span>
+</div>
+</div>
+
+<h2>🏆 الرتب</h2>
+<table>
+<tr><th>الرتبة</th><th>السعر</th></tr>
+<tr><td>👑 مالك</td><td>غير متاحة</td></tr>
+<tr><td>💎 بريميوم</td><td>غير متاحة</td></tr>
+<tr><td>⭐ VIP</td><td>غير متاحة</td></tr>
+<tr><td>🥈 عضو</td><td>مجاناً</td></tr>
+</table>
+
+<h2>🥇 المتصدرين</h2>
+<table>
+<tr><th>#</th><th>الاسم</th><th>النوفا</th></tr>
+<tr><td>🥇</td><td>لاعب 1</td><td>—</td></tr>
+<tr><td>🥈</td><td>لاعب 2</td><td>—</td></tr>
+<tr><td>🥉</td><td>لاعب 3</td><td>—</td></tr>
+</table>
+
+<h2>✨ المميزات</h2>
+<div class="grid">
+<div class="card"><h3>🛡️ حماية</h3><p>حظر، طرد، ميوت، تحذير.</p></div>
+<div class="card"><h3>💰 اقتصاد</h3><p>عملة نوفا.</p></div>
+<div class="card"><h3>🎮 ألعاب</h3><p>سلوت، روليت، تخمين.</p></div>
+<div class="card"><h3>📢 إعلانات</h3><p>إعلانات في أي روم.</p></div>
+</div>
+
+<h2>📋 الأوامر</h2>
+<div>
+<span class="badge">/حظر</span>
+<span class="badge">/طرد</span>
+<span class="badge">/ميوت</span>
+<span class="badge">/تحذير</span>
+<span class="badge">/مسح</span>
+<span class="badge">/قفل</span>
+<span class="badge">/فتح</span>
+<span class="badge">/اعلان</span>
+<span class="badge">/نكتة</span>
+<span class="badge">/حظ</span>
+<span class="badge">/تحدي</span>
+</div>
+
+<h2>❓ الأسئلة</h2>
+<div class="grid">
+<div class="card"><h3>كيف أضيف البوت؟</h3><p>اضغط زر "أضف البوت".</p></div>
+<div class="card"><h3>كيف أحصل على نوفا؟</h3><p>اكتب /جمع.</p></div>
+<div class="card"><h3>كيف أحصل على بريميوم؟</h3><p>قريباً.</p></div>
+</div>
+
+<h2>🔄 التحديثات</h2>
+<div class="card">
+<p>✅ إضافة نوفا</p>
+<p>✅ إضافة الحماية</p>
+<p>✅ إضافة الألعاب</p>
+</div>
+
+<h2>💬 التواصل</h2>
+<div class="card">
+<p>لأي استفسار:</p>
+<a href="#" class="btn">سيرفر الدعم</a>
+</div>
+
+<div class="footer">
+<p>© 2026 عبد — كل الحقوق محفوظة</p>
+</div>
+
+</body>
+  </html>
