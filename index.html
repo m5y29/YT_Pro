@@ -11,20 +11,15 @@
             text-align: center;
             padding: 50px;
         }
-        h1 {
-            color: #ffd700;
-            font-size: 50px;
-        }
-        p {
-            font-size: 20px;
-            color: #ccc;
-        }
+        h1 { color: #ffd700; font-size: 50px; }
+        h2 { color: #ffd700; font-size: 30px; margin-top: 40px; }
+        p { font-size: 20px; color: #ccc; }
         .box {
             background: #1a1a2e;
             padding: 30px;
             border-radius: 15px;
             margin: 20px auto;
-            max-width: 600px;
+            max-width: 700px;
         }
         .btn {
             background: #ffd700;
@@ -37,33 +32,115 @@
             display: inline-block;
             margin-top: 20px;
         }
-        .features {
-            text-align: right;
-            margin-top: 30px;
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
         }
-        .features li {
-            font-size: 18px;
+        .stat {
+            background: #252540;
+            padding: 20px 40px;
+            border-radius: 10px;
+        }
+        .stat span {
+            display: block;
+            font-size: 30px;
+            color: #ffd700;
+            font-weight: bold;
+        }
+        .faq {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .faq h3 {
+            color: #ffd700;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        .faq p {
+            font-size: 16px;
+            color: #ccc;
+        }
+        .updates {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .updates li {
+            font-size: 16px;
+            color: #ccc;
             margin: 10px 0;
         }
     </style>
 </head>
 <body>
+
     <div class="box">
         <h1>🤖 YT_Pro</h1>
         <p>بوتي الشخصي، فيه عملة نوفا ✨ ورتبات 🏆 وأوامر بريميوم 💎.</p>
-        
-        <div class="features">
-            <h2>المميزات:</h2>
-            <ul>
-                <li>🪙 عملة نوفا</li>
-                <li>🎮 ألعاب متنوعة</li>
-                <li>💎 أوامر بريميوم</li>
-                <li>🛡️ حماية السيرفر</li>
-                <li>🎁 أكواد هدايا</li>
-            </ul>
-        </div>
-
         <a href="#" class="btn">أضف البوت لسيرفرك</a>
     </div>
+
+    <div class="box">
+        <h2>📊 الإحصائيات</h2>
+        <div class="stats">
+            <div class="stat">
+                <span id="members">...</span>
+                عضو
+            </div>
+            <div class="stat">
+                <span id="servers">...</span>
+                سيرفر
+            </div>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>❓ الأسئلة الشائعة</h2>
+        <div class="faq">
+            <h3>كيف أضيف البوت؟</h3>
+            <p>اضغط على زر "أضف البوت لسيرفرك" ← واختر السيرفر.</p>
+            <h3>كيف أحصل على نوفا؟</h3>
+            <p>اكتب /جمع ← أو استخدم أكواد الهدايا.</p>
+            <h3>كيف أحصل على بريميوم؟</h3>
+            <p>اكتب /بريميوم ← تحتاج 10 مليون نوفا.</p>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>🔄 آخر التحديثات</h2>
+        <div class="updates">
+            <ul>
+                <li>✅ إضافة عملة نوفا</li>
+                <li>✅ إضافة أوامر الحماية</li>
+                <li>✅ إضافة الألعاب</li>
+                <li>✅ إضافة نظام البريميوم</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>💬 الدعم</h2>
+        <p>لأي استفسار أو مشكلة ← تواصل معنا:</p>
+        <a href="https://discord.gg/xxxxx" class="btn">سيرفر الدعم</a>
+    </div>
+
+    <script>
+        // عدادات (ثابتة - تقدر تغيرها يدوياً)
+        document.getElementById('members').innerText = '1000';
+        document.getElementById('servers').innerText = '50';
+    </script>
+
 </body>
-      </html>
+</html>
+            
+        
+                
+                
+
+        
+            
+    
+
+    
+
